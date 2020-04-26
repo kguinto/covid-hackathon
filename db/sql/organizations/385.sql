@@ -1,0 +1,118 @@
+
+BEGIN;
+
+INSERT INTO organizations
+    (
+      name,
+      address,
+      city,
+      state,
+      instructions,
+      accepts_opened,
+      latitude,
+      longitude
+    )
+  VALUES
+    (
+      'Wyckoff Heights Medical Center',
+      '374 Stockholm St
+Brooklyn, NY 11237',
+      'New York - Brooklyn',
+      'NY',
+      'ATTN: Call Dr. Lafleur 917-405-1392',
+      'Yes, must be unused and clean',
+      '40.704082',
+      '-73.9177493'
+    );
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('N95s',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Wyckoff Heights Medical Center'
+        AND o.latitude = '40.704082'
+        AND o.longitude = '-73.9177493'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Surgical masks',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Wyckoff Heights Medical Center'
+        AND o.latitude = '40.704082'
+        AND o.longitude = '-73.9177493'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Face shields',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Wyckoff Heights Medical Center'
+        AND o.latitude = '40.704082'
+        AND o.longitude = '-73.9177493'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Disposable booties',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Wyckoff Heights Medical Center'
+        AND o.latitude = '40.704082'
+        AND o.longitude = '-73.9177493'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Safety goggles',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Wyckoff Heights Medical Center'
+        AND o.latitude = '40.704082'
+        AND o.longitude = '-73.9177493'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Gloves',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Wyckoff Heights Medical Center'
+        AND o.latitude = '40.704082'
+        AND o.longitude = '-73.9177493'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Gowns',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Wyckoff Heights Medical Center'
+        AND o.latitude = '40.704082'
+        AND o.longitude = '-73.9177493'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Hand sanitizer',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Wyckoff Heights Medical Center'
+        AND o.latitude = '40.704082'
+        AND o.longitude = '-73.9177493'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Disinfecting wipes',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Wyckoff Heights Medical Center'
+        AND o.latitude = '40.704082'
+        AND o.longitude = '-73.9177493'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Thermometers',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Wyckoff Heights Medical Center'
+        AND o.latitude = '40.704082'
+        AND o.longitude = '-73.9177493'));
+
+COMMIT;

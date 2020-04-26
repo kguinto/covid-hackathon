@@ -1,0 +1,109 @@
+
+BEGIN;
+
+INSERT INTO organizations
+    (
+      name,
+      address,
+      city,
+      state,
+      instructions,
+      accepts_opened,
+      latitude,
+      longitude
+    )
+  VALUES
+    (
+      'Bassett Medical Center',
+      '1 Atwell Rd
+Cooperstown, NY 13326',
+      'Cooperstown',
+      'NY',
+      '',
+      'No',
+      '42.695726',
+      '-74.9233609'
+    );
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('N95s',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Bassett Medical Center'
+        AND o.latitude = '42.695726'
+        AND o.longitude = '-74.9233609'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Surgical masks',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Bassett Medical Center'
+        AND o.latitude = '42.695726'
+        AND o.longitude = '-74.9233609'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Face shields',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Bassett Medical Center'
+        AND o.latitude = '42.695726'
+        AND o.longitude = '-74.9233609'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Disposable booties',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Bassett Medical Center'
+        AND o.latitude = '42.695726'
+        AND o.longitude = '-74.9233609'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Safety goggles',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Bassett Medical Center'
+        AND o.latitude = '42.695726'
+        AND o.longitude = '-74.9233609'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Gloves',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Bassett Medical Center'
+        AND o.latitude = '42.695726'
+        AND o.longitude = '-74.9233609'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Gowns',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Bassett Medical Center'
+        AND o.latitude = '42.695726'
+        AND o.longitude = '-74.9233609'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Hand sanitizer',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Bassett Medical Center'
+        AND o.latitude = '42.695726'
+        AND o.longitude = '-74.9233609'));
+
+INSERT INTO organization_needs
+    (need, org_id)
+  VALUES
+    ('Disinfecting wipes',
+    (SELECT id FROM organizations o
+      WHERE o.name = 'Bassett Medical Center'
+        AND o.latitude = '42.695726'
+        AND o.longitude = '-74.9233609'));
+
+COMMIT;
