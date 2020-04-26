@@ -1,5 +1,5 @@
 ## TODO: Make this a build option
-npm i
+npm ci --silent --no-progress 
 npm run build
 
-docker build --no-cache -t covid-hackathon-ui:latest .
+docker build --no-cache -t crisisconnector/ui:latest .

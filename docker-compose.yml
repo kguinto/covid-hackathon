@@ -2,32 +2,18 @@ version: "3.7"
 
 services:
   web:
-    build: .
+    image: crisisconnector/api:latest
     volumes:
-      - ./services/web/:/usr/src/app/
+      - ./api/services/web/:/usr/src/app/
     ports:
-      - 5000:5000
+      - 81:5000
+    environment:
+      - "DB_URL=${DB_URL:-host.docker.internal:82}"
     depends_on:
-      - db
       - ui
   ui:
-    image: covid-hackathon-ui:latest
+    image: crisisconnector/ui:latest
     ports:
       - 80:80
     environment:
       - "API_URL=http://web:5000"
-  db:
-    image: postgres:latest
-    ports:
-      - 5432:5432
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=help_directory
-      - POSTGRES_HOST_AUTH_METHOD=trust
-    restart: always
-    networks:
-      - default
-volumes:
-  postgres_data:
